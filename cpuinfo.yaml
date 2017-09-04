@@ -14,4 +14,3 @@ run:
      steps:
         - pwd
         - ls -al
-        - ./test.sh
