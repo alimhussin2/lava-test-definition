@@ -1,0 +1,17 @@
+metadata:
+    format: Lava-Test Test Definition 1.0
+    name: cpu-test
+    description: "Display cpu information for device under test"
+    maintainer:
+        - alimhussin2@gmail.com
+    os: 
+        - ubuntu
+        - debian
+    environment:
+        - lava-test-shell
+     
+run:
+     steps:
+        - pwd
+        - ls -al
+        - ./test.sh
