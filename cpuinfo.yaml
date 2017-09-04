@@ -5,8 +5,9 @@ metadata:
     maintainer:
         - alimhussin2@gmail.com
     os: 
-        - ubuntu
         - debian
+    scope:
+        - functional
     environment:
         - lava-test-shell
      
