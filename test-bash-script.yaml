@@ -12,7 +12,6 @@ metadata:
         - lava-test-shell
 run:
      steps:
-        - chmod +x /scripts/bash/hello.sh
         - ./scripts/bash/hello.sh
         
 parse:
