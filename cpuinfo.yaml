@@ -16,3 +16,5 @@ run:
         - pwd
         - lscpu
         - echo "=========== end of cpu info ============="
+        - python --version
+        - apt-get install python
