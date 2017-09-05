@@ -1,0 +1,59 @@
+# Your first LAVA JOB definition for an x86_64 QEMU
+device_type: qemu02
+job_name: qemu test, pull from git
+
+timeouts:
+  job:
+    minutes: 15
+  action:
+    minutes: 5
+  connection:
+    minutes: 2
+priority: medium
+visibility: public
+
+# context allows specific values to be overridden or included
+context:
+  # tell the qemu template which architecture is being tested
+  # the template uses that to ensure that qemu-system-x86_64 is executed.
+  arch: amd64
+  extra_options:
+  - -no-reboot
+
+metadata:
+  # please change these fields when modifying this job for your own tests.
+  docs-source: job_beta
+  docs-filename: qemu-git.yaml
+
+# ACTION_BLOCK
+actions:
+- deploy:
+    timeout:
+      minutes: 5
+    to: tmpfs
+    images:
+      rootfs:
+        image_arg: -drive format=raw,file={rootfs}
+        url: http://172.30.199.18:8080/test/stretch-2.img.gz
+        compression: gz
+    os: debian
+
+# BOOT_BLOCK
+- boot:
+    timeout:
+      minutes: 2
+    method: qemu
+    media: tmpfs
+    prompts: ["root@debian:"]
+    auto_login:
+      login_prompt: "login:"
+      username: root
+ 
+- test:
+    timeout:
+      minutes: 5
+    definitions:
+    - repository: https://github.com/alimhussin2/lava-test-definition.git
+      from: git
+      name: test-cpuinfo
+      path: cpuinfo.yaml
