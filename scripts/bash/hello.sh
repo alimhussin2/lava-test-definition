@@ -4,7 +4,7 @@
 
 set -e
 
-echo "\n\n\n\nhello world. This is a bash script! \n\n\n\n\n
+echo "\n\n\n\nhello world. This is a bash script! \n\n\n\n\n"
 for i in {1..10}
 do
     echo "test-case-$i    ERROR "
