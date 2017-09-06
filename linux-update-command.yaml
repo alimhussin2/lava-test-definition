@@ -1,0 +1,25 @@
+metadata:
+    format: Lava-Test Test Definition 1.0
+    name: 
+    description: "Testing the linux update command"
+    maintainer:
+        - alimhussin2@gmail.com
+    os: 
+        - debian
+    scope:
+        - functional
+    environment:
+        - lava-test-shell
+run:
+     steps:
+        - echo "hello"
+        - echo "try to update debian package............"
+        - apt-get update
+        - echo "update done........."
+        
+parse:
+    pattern: "(?P<test_case_id>.*)\\s+(?P<result>PASS|FAIL|ERROR)\\s+"
+    fixupdict:
+        ERROR: fail
+        FAIL: fail
+        PASS: pass
