@@ -16,6 +16,10 @@ run:
         - echo "try to update debian package............"
         - apt-get update
         - echo "update done........."
+        - echo "try to install python"
+        - apt-get install python3
+        - python --version
+        - python hello.sh
         
 parse:
     pattern: "(?P<test_case_id>.*)\\s+(?P<result>PASS|FAIL|ERROR)\\s+"
