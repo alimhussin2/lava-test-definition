@@ -20,7 +20,9 @@ run:
         - echo "how are you?" > hello.txt
         - cat hello.txt
         - cp hello.txt hi.txt
+        - ls -l
         - rm hello.txt
+        - ls -l
         - cd ..
         - rm -rf helloworld
         - ls -l
