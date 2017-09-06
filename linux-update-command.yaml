@@ -1,7 +1,7 @@
 metadata:
     format: Lava-Test Test Definition 1.0
     name: 
-    description: "Testing the linux update command"
+    description: "Testing the linux update command & install python"
     maintainer:
         - alimhussin2@gmail.com
     os: 
