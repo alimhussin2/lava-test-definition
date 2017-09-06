@@ -1,0 +1,36 @@
+metadata:
+    format: Lava-Test Test Definition 1.0
+    name: basic_linux_command
+    description: "Testing the linux basic command"
+    maintainer:
+        - alimhussin2@gmail.com
+    os: 
+        - debian
+    scope:
+        - functional
+    environment:
+        - lava-test-shell
+run:
+     steps:
+        - ls -l
+        - pwd
+        - echo "This is linux bsic command test"
+        - mkdir helloworld
+        - cd helloworld
+        - echo "how are you?" > hello.txt
+        - cat hello.txt
+        - cp hello.txt hi.txt
+        - rm hello.txt
+        - cd ..
+        - rm -rf helloworld
+        - ls -l
+        - echo "end of testing"
+        - echo ""
+        - echo ""
+        
+parse:
+    pattern: "(?P<test_case_id>.*)\\s+(?P<result>PASS|FAIL|ERROR)\\s+"
+    fixupdict:
+        ERROR: fail
+        FAIL: fail
+        PASS: pass
