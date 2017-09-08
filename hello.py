@@ -22,7 +22,7 @@ def printinfo(name, age):
 # Variables
 counter = 100	# integer
 miles = 100.0	# floating point
-name = "alim"	# a string
+name = "yocto"	# a string
 
 print (counter)
 print  (miles)
@@ -33,6 +33,7 @@ print("\nThis is if statement section\n")
 
 var = 0
 var =int(input("Give any value: "))
+var = 67
 if (var > 100):
 	print ("Your value is high")
 elif (var > 120):
@@ -77,5 +78,7 @@ changeme(mylist)
 print('value outside the function: ', mylist)
 print('Calculate something...')
 name=input('Who are you?>> ')
+name = "lava"
 age=input('How old are you? >> ')
+age = 32
 printinfo(name, age)
